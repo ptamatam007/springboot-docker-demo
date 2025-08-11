@@ -1,10 +1,8 @@
 FROM eclipse-temurin:17
 
-LABEL mentainer="pradeep.tkreddy@gmail.com"
+COPY target/springboot-docker-demo-0.0.1-SNAPSHOT.jar /usr/app/
 
-WORKDIR /app
+WORKDIR /usr/app
 
-COPY target/springboot-docker-demo-0.0.1-SNAPSHOT.jar /app/springbootdocker-demo.jar
-
-ENTRYPOINT["java", "-jar", "springbootdocker-demo.jar"]
+ENTRYPOINT ["java", "-jar", "springboot-docker-demo-0.0.1-SNAPSHOT.jar"]
 
